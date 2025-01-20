@@ -44,15 +44,15 @@ export const data = {
   footerContact: [
     {
       icon: LocationOn,
-      label: "194-A, Prakash Industrial Estate, Uttar Pradesh ",
+      label: "Delhi-Meerut Road,near Duhai Metro Station ",
     },
     {
       icon: PhoneAndroid,
-      label: "+91 9560021531",
+      label: "+91 9354678205",
     },
     {
       icon: EmailOutlined,
-      label: "edzuedtech@gmail.com",
+      label: "kunalsharma5868@gmail.com",
     },
   ],
   footerLinks: [
@@ -63,16 +63,16 @@ export const data = {
           label: "Home Page",
         },
         {
-          label: "Privacy Policy",
+          label: "Awards & Recognition",
         },
         {
-          label: "Refund Policy",
+          label: "Gallery",
         },
         {
-          label: "Privacy Policy",
+          label: "About Us",
         },
         {
-          label: "Terms and Conditions",
+          label: "Contact Us",
         },
       ],
     },
@@ -80,33 +80,44 @@ export const data = {
       heading: "UseFul Links",
       list: [
         {
-          label: "Web Development",
+          label: "Private Party",
         },
         {
-          label: "Artificial Intelligence",
+          label: "Social Event",
         },
         {
-          label: "Data Science",
+          label: "Anniversary Celebrations",
         },
         {
-          label: "Machine Learning",
+          label: "Corporate Events",
         },
         {
-          label: "Mobile App Development",
+          label: "Wedding Reception",
         },
-        // {
-        //   label: "Digital Marketing",
-        // },
-        // {
-        //   label: "Finance",
-        // },
-        // {
-        //   label: "Human Resource",
-        // },
-        // {
-        //   label: "Combo Packs",
-        // },
       ],
+    },
+  ],
+
+  choose: [
+    {
+      primary: "Experienced Chef",
+      secondary:
+        "Nunc si ultrices velit dolor sit justo amet iaculis interdum nam",
+    },
+    {
+      primary: "Solid Team",
+      secondary:
+        "Nunc si ultrices velit dolor sit justo amet iaculis interdum nam",
+    },
+    {
+      primary: "Best Cuisine",
+      secondary:
+        "Nunc si ultrices velit dolor sit justo amet iaculis interdum nam",
+    },
+    {
+      primary: "24/7 Support",
+      secondary:
+        "Nunc si ultrices velit dolor sit justo amet iaculis interdum nam",
     },
   ],
 };

@@ -4,6 +4,8 @@ import Head from "next/head";
 import heroImage from "@/banner/hero-banner.jpg";
 import About from "@/component/home/about";
 import ServiceComponent from "@/component/service";
+import banner2 from "@/banner/banner-2.jpg";
+import Choose from "@/component/home/choose";
 export default function Home() {
   return (
     <>
@@ -24,8 +26,19 @@ export default function Home() {
         <Box sx={{ pt: 7 }}>
           <About />
         </Box>
-        <Box sx={{ pt: 15 }}>
+        <Box sx={{ pt: { lg: 15, xs: 5 } }}>
           <ServiceComponent />
+        </Box>
+        <Box>
+          <Banner
+            img={banner2.src}
+            heading="Discount up to 50% for traditional menu, only this month."
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+            buttonText="Claim Promo"
+          />
+        </Box>
+        <Box sx={{ pt: 7 }}>
+          <Choose />
         </Box>
       </Box>
     </>

@@ -1,19 +1,27 @@
 import { COLORS } from "@/utils/enum";
 import { roboto, satisfy } from "@/utils/fonts";
-import { Box, Button, Container, Grid2, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid2,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import homeAbout from "@/banner/home-about.jpg";
 import tomato from "@/banner/tomato-basil.png";
 const About = () => {
+  const phone = useMediaQuery("(max-width:600px)");
   return (
     <div>
       <Container>
         <Grid2 container spacing={10}>
-          <Grid2 size={6}>
+          <Grid2 size={{ lg: 6, xs: 12 }}>
             <Typography
               sx={{
-                fontSize: 25,
+                fontSize: { lg: 25, xs: 20 },
                 fontFamily: satisfy.style,
                 color: COLORS.PRIMARY,
                 letterSpacing: 2,
@@ -23,7 +31,7 @@ const About = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: 45,
+                fontSize: { lg: 45, xs: 30 },
                 fontFamily: roboto.style,
                 mt: 1,
               }}
@@ -60,11 +68,17 @@ const About = () => {
               Discover More
             </Button>
           </Grid2>
-          <Grid2 size={6}>
+          <Grid2 size={{ lg: 6, xs: 12 }}>
             <Box sx={{ position: "relative" }}>
               <Image src={homeAbout} alt="" className="img-fluid" />
-              <Box sx={{ position: "absolute", bottom: -50, left:-60 }}>
-                <Image src={tomato} alt="" width={200} />
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: {lg:-50,xs:-20},
+                  left: { lg: -60, xs: -10 },
+                }}
+              >
+                <Image src={tomato} alt="" width={phone ? 100 : 200} />
               </Box>
             </Box>
           </Grid2>

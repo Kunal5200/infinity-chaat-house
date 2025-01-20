@@ -17,7 +17,7 @@ const Banner = ({
       <Box
         sx={{
           backgroundImage: `url(${img})`,
-          height: "100vh",
+          height: { lg: "100vh", xs: "80vh" },
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -34,11 +34,11 @@ const Banner = ({
         >
           <Container>
             <Grid2 container>
-              <Grid2 size={6}>
+              <Grid2 size={{ lg: 6, xs: 12 }}>
                 <Typography
                   sx={{
                     color: COLORS.PRIMARY,
-                    fontSize: 25,
+                    fontSize: { lg: 25, xs: 20 },
                     fontFamily: satisfy.style,
                   }}
                 >
@@ -47,7 +47,7 @@ const Banner = ({
                 <Typography
                   sx={{
                     color: COLORS.WHITE,
-                    fontSize: 50,
+                    fontSize: { lg: 50, xs: 20 },
                     fontFamily: roboto.style,
                     mt: 2,
                   }}
@@ -57,7 +57,7 @@ const Banner = ({
                 <Typography
                   sx={{
                     color: COLORS.WHITE,
-                    fontSize: 20,
+                    fontSize: { lg: 20, xs: 14 },
                     fontFamily: roboto.style,
                     mt: 2,
                   }}
@@ -71,7 +71,7 @@ const Banner = ({
                     p: 2,
                     color: COLORS.WHITE,
                     mt: 2,
-                    width: 200,
+                    width: { lg: 200, xs: 200 },
                     border: `2px solid ${COLORS.PRIMARY}`,
                     ":hover": {
                       color: COLORS.PRIMARY,

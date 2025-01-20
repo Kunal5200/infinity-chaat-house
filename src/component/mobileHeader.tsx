@@ -1,8 +1,11 @@
 import { data } from "@/assests/data";
 import logo from "@/logo/ith-logo.png";
+import { COLORS } from "@/utils/enum";
+import { roboto } from "@/utils/fonts";
 import { Close, Menu } from "@mui/icons-material";
 import {
   Box,
+  Container,
   Drawer,
   IconButton,
   List,
@@ -13,7 +16,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const MobileHeader = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
@@ -21,19 +24,44 @@ const MobileHeader = () => {
     router.push(path);
     setOpen(false);
   };
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        const currentScroll = window.pageYOffset;
+        // setScrollPosition(currentScroll);
+        setIsScrolling(currentScroll > 0);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
   return (
     <div>
-      <Stack
-        direction={"row"}
-        alignItems={"center"}
-        justifyContent={"space-between"}
-        p={1}
+      <Container
+        sx={{
+          position: isScrolling ? "relative" : "relative",
+          top: 0,
+          width: "100%",
+          pt: 1,
+          pb: 1,
+          zIndex: 99,
+          // backgroundColor: isScrolling ? "#00000050" : COLORS.TRANSPARENT,
+        }}
       >
-        <Image src={logo} alt="" width={100} />
-        <IconButton onClick={() => setOpen(true)}>
-          <Menu sx={{ fontSize: 30 }} />
-        </IconButton>
-      </Stack>
+        <Stack
+          direction={"row"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
+          <Image src={logo} alt="" width={70} />
+          <IconButton onClick={() => setOpen(true)}>
+            <Menu sx={{ fontSize: 30, color: COLORS.BLACK }} />
+          </IconButton>
+        </Stack>
+      </Container>
 
       <Drawer
         open={open}
@@ -46,7 +74,7 @@ const MobileHeader = () => {
       >
         <Box sx={{ textAlign: "end" }}>
           <IconButton onClick={() => setOpen(false)}>
-            <Close />
+            <Close htmlColor={COLORS.PRIMARY} />
           </IconButton>
         </Box>
         <List sx={{ mt: 5 }}>
@@ -58,8 +86,9 @@ const MobileHeader = () => {
                     <Typography
                       sx={{
                         textAlign: "start",
-                        fontSize: 25,
+                        fontSize: 20,
                         textTransform: "uppercase",
+                        fontFamily: roboto.style,
                       }}
                     >
                       {val.label}

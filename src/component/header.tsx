@@ -34,7 +34,7 @@ const Header = () => {
         left: 0,
         width: isScrolling ? "100%" : "100%",
         zIndex: 99,
-        backgroundColor: isScrolling ? "#CE080920" : COLORS.TRANSPARENT,
+        backgroundColor: isScrolling ? "#00000050" : COLORS.TRANSPARENT,
         transition: "all 0.5s ease",
         backdropFilter: isScrolling ? "blur(5px)" : "none",
       }}
@@ -73,7 +73,7 @@ const Header = () => {
                   "&:hover::after": {
                     transform: "scaleX(1)",
                   },
-                  color: COLORS.WHITE,
+                  color: isScrolling ? COLORS.WHITE : COLORS.WHITE,
                 }}
                 key={i}
                 onClick={() => changePath(val.url)}

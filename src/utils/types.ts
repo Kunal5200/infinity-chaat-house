@@ -18,3 +18,9 @@ export interface BANNER_PROPS {
   onClick?: () => void;
   buttonText: string;
 }
+
+export interface SERVICE_CARD_PROPS {
+  img: StaticImageData;
+  heading: string;
+description: string;
+}
