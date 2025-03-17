@@ -2,10 +2,13 @@ import Banner from "@/component/banner";
 import { Box } from "@mui/material";
 import Head from "next/head";
 import heroImage from "@/banner/hero-banner.jpg";
-import About from "@/component/home/about";
+
 import ServiceComponent from "@/component/service";
 import banner2 from "@/banner/banner-2.jpg";
 import Choose from "@/component/home/choose";
+import homeAbout from "@/banner/home-about.jpg";
+import tomato from "@/banner/tomato-basil.png";
+import AboutComponent from "@/component/home/about";
 export default function Home() {
   return (
     <>
@@ -24,7 +27,13 @@ export default function Home() {
           subHeading="Welcome to Infinity Chaat House"
         />
         <Box sx={{ pt: 7 }}>
-          <About />
+          <AboutComponent
+            img1={homeAbout}
+            img2={tomato}
+            subHeading="About Us"
+            heading="Catering is not just all about food. It’s about excellent service as well"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+          />
         </Box>
         <Box sx={{ pt: { lg: 15, xs: 5 } }}>
           <ServiceComponent />

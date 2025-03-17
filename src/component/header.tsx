@@ -11,6 +11,7 @@ const Header = () => {
   const router = useRouter();
   const [isScrolling, setIsScrolling] = useState(false);
   const changePath = (path: string) => {
+    // alert(path)
     router.push(path);
   };
 

@@ -1,5 +1,6 @@
 import { COLORS } from "@/utils/enum";
 import { roboto, satisfy } from "@/utils/fonts";
+import { ABOUT_PROPS } from "@/utils/types";
 import {
   Box,
   Button,
@@ -9,10 +10,13 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Image from "next/image";
-import React from "react";
-import homeAbout from "@/banner/home-about.jpg";
-import tomato from "@/banner/tomato-basil.png";
-const About = () => {
+const AboutComponent = ({
+  subHeading,
+  heading,
+  description,
+  img1,
+  img2,
+}: ABOUT_PROPS) => {
   const phone = useMediaQuery("(max-width:600px)");
   return (
     <div>
@@ -27,7 +31,7 @@ const About = () => {
                 letterSpacing: 2,
               }}
             >
-              About Us
+              {subHeading}
             </Typography>
             <Typography
               sx={{
@@ -36,8 +40,7 @@ const About = () => {
                 mt: 1,
               }}
             >
-              Catering is not just all about food. It’s about excellent service
-              as well
+              {heading}
             </Typography>
             <Typography
               sx={{
@@ -46,8 +49,7 @@ const About = () => {
                 mt: 2,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              {description}
             </Typography>
             <Button
               sx={{
@@ -70,16 +72,18 @@ const About = () => {
           </Grid2>
           <Grid2 size={{ lg: 6, xs: 12 }}>
             <Box sx={{ position: "relative" }}>
-              <Image src={homeAbout} alt="" className="img-fluid" />
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: {lg:-50,xs:-20},
-                  left: { lg: -60, xs: -10 },
-                }}
-              >
-                <Image src={tomato} alt="" width={phone ? 100 : 200} />
-              </Box>
+              <Image src={img1} alt="" className="img-fluid" />
+              {img2 && (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: { lg: -50, xs: -20 },
+                    left: { lg: -60, xs: -10 },
+                  }}
+                >
+                  <Image src={img2} alt="" width={phone ? 100 : 200} />
+                </Box>
+              )}
             </Box>
           </Grid2>
         </Grid2>
@@ -88,4 +92,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutComponent;

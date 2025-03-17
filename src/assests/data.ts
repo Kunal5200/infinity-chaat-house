@@ -8,6 +8,10 @@ export const data = {
       url: "/",
     },
     {
+      label: "About Us",
+      url: "/about",
+    },
+    {
       label: "Awards & Recognition",
       url: "/awards",
     },
@@ -15,10 +19,7 @@ export const data = {
       label: "Gallery",
       url: "/gallery",
     },
-    {
-      label: "About Us",
-      url: "/about",
-    },
+
     {
       label: "Contact Us",
       url: "/contact",
